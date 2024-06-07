@@ -26,6 +26,7 @@
 		08D6ED862C13A45200AF6E31 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED832C13A45200AF6E31 /* SplashPresenter.swift */; };
 		08D6ED872C13A45200AF6E31 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED842C13A45200AF6E31 /* SplashViewController.swift */; };
 		08D6ED892C13A4D000AF6E31 /* SplashPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED882C13A4D000AF6E31 /* SplashPresenterType.swift */; };
+		08D6ED8B2C13B03800AF6E31 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED8A2C13B03800AF6E31 /* HomeCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		08D6ED832C13A45200AF6E31 /* SplashPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		08D6ED842C13A45200AF6E31 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		08D6ED882C13A4D000AF6E31 /* SplashPresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterType.swift; sourceTree = "<group>"; };
+		08D6ED8A2C13B03800AF6E31 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				08D6ED692C13855D00AF6E31 /* HomeViewController.xib */,
 				08D6ED6C2C1385A000AF6E31 /* HomePresenter.swift */,
 				08D6ED6E2C13879800AF6E31 /* HomePresenterType.swift */,
+				08D6ED8A2C13B03800AF6E31 /* HomeCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				08D6ED892C13A4D000AF6E31 /* SplashPresenterType.swift in Sources */,
 				08D6ED7A2C138CA000AF6E31 /* NavigationController.swift in Sources */,
 				08D6ED6F2C13879800AF6E31 /* HomePresenterType.swift in Sources */,
+				08D6ED8B2C13B03800AF6E31 /* HomeCoordinator.swift in Sources */,
 				08D6ED6A2C13855D00AF6E31 /* HomeViewController.swift in Sources */,
 				08D6ED862C13A45200AF6E31 /* SplashPresenter.swift in Sources */,
 			);
