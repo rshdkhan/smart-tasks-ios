@@ -12,13 +12,26 @@ class HomePresenter: HomePresenterType, HomePresenterInput, HomePresenterOutput 
     weak var outputs: HomePresenterOutput? { self }
     
     // MARK: Outputs
-    var title: ((String) -> Void)?
+    var title: String? = "Home"
     
+    private var fetchAllTaskUseCase: FetchAllTasksUseCaseType
     
-    init() { }
+    init(fetchAllTaskUseCase: FetchAllTasksUseCaseType) {
+        self.fetchAllTaskUseCase = fetchAllTaskUseCase
+    }
     
     // MARK: Inputs
     func viewLoaded() {
-        self.title?("Home")
+        fetchAllTaskUseCase.execute { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let tasksArray):
+                print("Tasks: >> \(tasksArray.count)")
+                
+            case .failure(let error):
+                print("Error: >> \(error)")
+            }
+        }
     }
 }

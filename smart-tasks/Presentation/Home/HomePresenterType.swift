@@ -14,7 +14,7 @@ protocol PresenterInputType: AnyObject {
 protocol HomePresenterInput: PresenterInputType { }
 
 protocol HomePresenterOutput: AnyObject {
-    var title: ((String)->Void)? { get set }
+    var title: String? { get set }
 }
 
 protocol HomePresenterType {

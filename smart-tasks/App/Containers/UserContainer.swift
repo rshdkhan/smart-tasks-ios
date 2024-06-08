@@ -14,9 +14,20 @@ struct UserContainer {
         self.parent = parent
     }
     
+    // Controllers & Presenters
     func makeHomeViewController() -> (HomeViewController, HomePresenter) {
-        let presenter = HomePresenter()
+        let presenter = HomePresenter(fetchAllTaskUseCase: makeFetchAllTasksUseCase())
         let controller = HomeViewController(presenter: presenter)
         return (controller, presenter)
+    }
+    
+    /// UseCases
+    func makeFetchAllTasksUseCase() -> FetchAllTasksUseCase {
+        return FetchAllTasksUseCase(repository: makeTaskMockRepository())
+    }
+    
+    /// Repository
+    func makeTaskMockRepository() -> TaskRepositoryMock {
+        return TaskRepositoryMock()
     }
 }

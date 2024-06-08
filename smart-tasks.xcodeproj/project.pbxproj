@@ -27,6 +27,11 @@
 		08D6ED872C13A45200AF6E31 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED842C13A45200AF6E31 /* SplashViewController.swift */; };
 		08D6ED892C13A4D000AF6E31 /* SplashPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED882C13A4D000AF6E31 /* SplashPresenterType.swift */; };
 		08D6ED8B2C13B03800AF6E31 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED8A2C13B03800AF6E31 /* HomeCoordinator.swift */; };
+		08D6ED8E2C149F1900AF6E31 /* FetchAllTasksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED8D2C149F1900AF6E31 /* FetchAllTasksUseCase.swift */; };
+		08D6ED912C149F9900AF6E31 /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED902C149F9900AF6E31 /* TaskEntity.swift */; };
+		08D6ED942C14A2FE00AF6E31 /* TaskRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED932C14A2FE00AF6E31 /* TaskRepositoryType.swift */; };
+		08D6ED982C14ACC300AF6E31 /* TaskTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED962C14ACC300AF6E31 /* TaskTableCell.swift */; };
+		08D6ED992C14ACC300AF6E31 /* TaskTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08D6ED972C14ACC300AF6E31 /* TaskTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,11 @@
 		08D6ED842C13A45200AF6E31 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		08D6ED882C13A4D000AF6E31 /* SplashPresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterType.swift; sourceTree = "<group>"; };
 		08D6ED8A2C13B03800AF6E31 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		08D6ED8D2C149F1900AF6E31 /* FetchAllTasksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllTasksUseCase.swift; sourceTree = "<group>"; };
+		08D6ED902C149F9900AF6E31 /* TaskEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntity.swift; sourceTree = "<group>"; };
+		08D6ED932C14A2FE00AF6E31 /* TaskRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryType.swift; sourceTree = "<group>"; };
+		08D6ED962C14ACC300AF6E31 /* TaskTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCell.swift; sourceTree = "<group>"; };
+		08D6ED972C14ACC300AF6E31 /* TaskTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +94,7 @@
 		087FEA582C137A6500812F12 /* smart-tasks */ = {
 			isa = PBXGroup;
 			children = (
-				08D6ED782C138C8000AF6E31 /* AppUIKit */,
+				08D6ED782C138C8000AF6E31 /* UIKit */,
 				08D6ED632C13832800AF6E31 /* App */,
 				08D6ED622C13819100AF6E31 /* Data */,
 				08D6ED612C1380F900AF6E31 /* Domain */,
@@ -110,6 +120,9 @@
 		08D6ED612C1380F900AF6E31 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				08D6ED922C14A2E300AF6E31 /* Repository */,
+				08D6ED8F2C149F8100AF6E31 /* Entities */,
+				08D6ED8C2C149EFF00AF6E31 /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -144,6 +157,7 @@
 		08D6ED652C1384ED00AF6E31 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				08D6ED952C14AC8100AF6E31 /* TableCell */,
 				08D6ED682C13855D00AF6E31 /* HomeViewController.swift */,
 				08D6ED692C13855D00AF6E31 /* HomeViewController.xib */,
 				08D6ED6C2C1385A000AF6E31 /* HomePresenter.swift */,
@@ -153,12 +167,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		08D6ED782C138C8000AF6E31 /* AppUIKit */ = {
+		08D6ED782C138C8000AF6E31 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				08D6ED7B2C138CC900AF6E31 /* BaseClases */,
 			);
-			path = AppUIKit;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		08D6ED7B2C138CC900AF6E31 /* BaseClases */ = {
@@ -187,6 +201,39 @@
 				08D6ED882C13A4D000AF6E31 /* SplashPresenterType.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		08D6ED8C2C149EFF00AF6E31 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				08D6ED8D2C149F1900AF6E31 /* FetchAllTasksUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		08D6ED8F2C149F8100AF6E31 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				08D6ED902C149F9900AF6E31 /* TaskEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		08D6ED922C14A2E300AF6E31 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				08D6ED932C14A2FE00AF6E31 /* TaskRepositoryType.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		08D6ED952C14AC8100AF6E31 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				08D6ED962C14ACC300AF6E31 /* TaskTableCell.swift */,
+				08D6ED972C14ACC300AF6E31 /* TaskTableCell.xib */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D6ED992C14ACC300AF6E31 /* TaskTableCell.xib in Resources */,
 				087FEA662C137A6600812F12 /* LaunchScreen.storyboard in Resources */,
 				087FEA632C137A6600812F12 /* Assets.xcassets in Resources */,
 				08D6ED6B2C13855D00AF6E31 /* HomeViewController.xib in Resources */,
@@ -268,13 +316,17 @@
 				08D6ED802C13A2DC00AF6E31 /* UserContainer.swift in Sources */,
 				08D6ED872C13A45200AF6E31 /* SplashViewController.swift in Sources */,
 				08D6ED712C13892700AF6E31 /* Coordinator.swift in Sources */,
+				08D6ED942C14A2FE00AF6E31 /* TaskRepositoryType.swift in Sources */,
 				08D6ED772C138B4000AF6E31 /* ResultType.swift in Sources */,
+				08D6ED982C14ACC300AF6E31 /* TaskTableCell.swift in Sources */,
 				08D6ED752C138AFC00AF6E31 /* AppCoordinator.swift in Sources */,
 				087FEA5C2C137A6500812F12 /* SceneDelegate.swift in Sources */,
 				08D6ED892C13A4D000AF6E31 /* SplashPresenterType.swift in Sources */,
 				08D6ED7A2C138CA000AF6E31 /* NavigationController.swift in Sources */,
 				08D6ED6F2C13879800AF6E31 /* HomePresenterType.swift in Sources */,
 				08D6ED8B2C13B03800AF6E31 /* HomeCoordinator.swift in Sources */,
+				08D6ED912C149F9900AF6E31 /* TaskEntity.swift in Sources */,
+				08D6ED8E2C149F1900AF6E31 /* FetchAllTasksUseCase.swift in Sources */,
 				08D6ED6A2C13855D00AF6E31 /* HomeViewController.swift in Sources */,
 				08D6ED862C13A45200AF6E31 /* SplashPresenter.swift in Sources */,
 			);

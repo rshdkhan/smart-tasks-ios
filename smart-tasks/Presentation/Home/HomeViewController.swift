@@ -18,11 +18,17 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set the title closure directly on the presenter instance
-        presenter.outputs?.title = { [weak self] title in
-            self?.title = title
-        }
+        setupViews()
+        bindPresenterClosures()
 
         presenter.inputs?.viewLoaded()
+    }
+}
+
+private extension HomeViewController {
+    func setupViews() { }
+    
+    func bindPresenterClosures() {
+        title = presenter.outputs?.title
     }
 }
