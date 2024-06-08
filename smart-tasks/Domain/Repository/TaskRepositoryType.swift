@@ -52,7 +52,7 @@ class TaskRepositoryMock: TaskRepositoryType {
     func getAllTasks(completion: @escaping (Result<[TaskEntity], Error>) -> Void) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let models = [TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity()]
+            let models = [TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity()]
             completion(.success(models))
         }
     }

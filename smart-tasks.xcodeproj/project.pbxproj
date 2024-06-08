@@ -32,6 +32,10 @@
 		08D6ED942C14A2FE00AF6E31 /* TaskRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED932C14A2FE00AF6E31 /* TaskRepositoryType.swift */; };
 		08D6ED982C14ACC300AF6E31 /* TaskTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED962C14ACC300AF6E31 /* TaskTableCell.swift */; };
 		08D6ED992C14ACC300AF6E31 /* TaskTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08D6ED972C14ACC300AF6E31 /* TaskTableCell.xib */; };
+		08D6ED9B2C14B61100AF6E31 /* TaskTableCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED9A2C14B61100AF6E31 /* TaskTableCellPresenter.swift */; };
+		08D6EDA12C15050F00AF6E31 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6ED9F2C15050F00AF6E31 /* SpaceCell.swift */; };
+		08D6EDA22C15050F00AF6E31 /* SpaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08D6EDA02C15050F00AF6E31 /* SpaceCell.xib */; };
+		08D6EDA42C15053800AF6E31 /* SpaceCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDA32C15053800AF6E31 /* SpaceCellPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		08D6ED932C14A2FE00AF6E31 /* TaskRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryType.swift; sourceTree = "<group>"; };
 		08D6ED962C14ACC300AF6E31 /* TaskTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCell.swift; sourceTree = "<group>"; };
 		08D6ED972C14ACC300AF6E31 /* TaskTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableCell.xib; sourceTree = "<group>"; };
+		08D6ED9A2C14B61100AF6E31 /* TaskTableCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCellPresenter.swift; sourceTree = "<group>"; };
+		08D6ED9F2C15050F00AF6E31 /* SpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
+		08D6EDA02C15050F00AF6E31 /* SpaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceCell.xib; sourceTree = "<group>"; };
+		08D6EDA32C15053800AF6E31 /* SpaceCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCellPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +165,8 @@
 		08D6ED652C1384ED00AF6E31 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				08D6ED952C14AC8100AF6E31 /* TableCell */,
+				08D6ED9C2C15046B00AF6E31 /* SpaceTableView */,
+				08D6ED952C14AC8100AF6E31 /* TaskTableCell */,
 				08D6ED682C13855D00AF6E31 /* HomeViewController.swift */,
 				08D6ED692C13855D00AF6E31 /* HomeViewController.xib */,
 				08D6ED6C2C1385A000AF6E31 /* HomePresenter.swift */,
@@ -227,13 +236,24 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		08D6ED952C14AC8100AF6E31 /* TableCell */ = {
+		08D6ED952C14AC8100AF6E31 /* TaskTableCell */ = {
 			isa = PBXGroup;
 			children = (
 				08D6ED962C14ACC300AF6E31 /* TaskTableCell.swift */,
 				08D6ED972C14ACC300AF6E31 /* TaskTableCell.xib */,
+				08D6ED9A2C14B61100AF6E31 /* TaskTableCellPresenter.swift */,
 			);
-			path = TableCell;
+			path = TaskTableCell;
+			sourceTree = "<group>";
+		};
+		08D6ED9C2C15046B00AF6E31 /* SpaceTableView */ = {
+			isa = PBXGroup;
+			children = (
+				08D6ED9F2C15050F00AF6E31 /* SpaceCell.swift */,
+				08D6EDA02C15050F00AF6E31 /* SpaceCell.xib */,
+				08D6EDA32C15053800AF6E31 /* SpaceCellPresenter.swift */,
+			);
+			path = SpaceTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +316,7 @@
 			files = (
 				08D6ED992C14ACC300AF6E31 /* TaskTableCell.xib in Resources */,
 				087FEA662C137A6600812F12 /* LaunchScreen.storyboard in Resources */,
+				08D6EDA22C15050F00AF6E31 /* SpaceCell.xib in Resources */,
 				087FEA632C137A6600812F12 /* Assets.xcassets in Resources */,
 				08D6ED6B2C13855D00AF6E31 /* HomeViewController.xib in Resources */,
 				08D6ED852C13A45200AF6E31 /* SplashViewController.xib in Resources */,
@@ -309,14 +330,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D6EDA12C15050F00AF6E31 /* SpaceCell.swift in Sources */,
 				08D6ED732C13897F00AF6E31 /* CoordinatorType.swift in Sources */,
 				08D6ED6D2C1385A000AF6E31 /* HomePresenter.swift in Sources */,
+				08D6EDA42C15053800AF6E31 /* SpaceCellPresenter.swift in Sources */,
 				087FEA5A2C137A6500812F12 /* AppDelegate.swift in Sources */,
 				08D6ED7E2C13A2BB00AF6E31 /* AppMainContainer.swift in Sources */,
 				08D6ED802C13A2DC00AF6E31 /* UserContainer.swift in Sources */,
 				08D6ED872C13A45200AF6E31 /* SplashViewController.swift in Sources */,
 				08D6ED712C13892700AF6E31 /* Coordinator.swift in Sources */,
 				08D6ED942C14A2FE00AF6E31 /* TaskRepositoryType.swift in Sources */,
+				08D6ED9B2C14B61100AF6E31 /* TaskTableCellPresenter.swift in Sources */,
 				08D6ED772C138B4000AF6E31 /* ResultType.swift in Sources */,
 				08D6ED982C14ACC300AF6E31 /* TaskTableCell.swift in Sources */,
 				08D6ED752C138AFC00AF6E31 /* AppCoordinator.swift in Sources */,

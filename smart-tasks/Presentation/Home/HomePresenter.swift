@@ -13,6 +13,8 @@ class HomePresenter: HomePresenterType, HomePresenterInput, HomePresenterOutput 
     
     // MARK: Outputs
     var title: String? = "Home"
+    var tasksCellPresenters: (([ReusableViewPresenterType]) -> Void)?
+    var error: ((String) -> Void)?
     
     private var fetchAllTaskUseCase: FetchAllTasksUseCaseType
     
@@ -26,11 +28,18 @@ class HomePresenter: HomePresenterType, HomePresenterInput, HomePresenterOutput 
             guard let self = self else { return }
             
             switch result {
-            case .success(let tasksArray):
-                print("Tasks: >> \(tasksArray.count)")
+            case .success(let tasks):
+                var presenters: [ReusableViewPresenterType] = []
+                
+                tasks.forEach { task in
+                    presenters.append(TaskTableCellPresenter(task: task))
+                    presenters.append(SpaceCellPresenter(height: 10))
+                }
+                
+                self.tasksCellPresenters?(presenters)
                 
             case .failure(let error):
-                print("Error: >> \(error)")
+                self.error?(error.localizedDescription)
             }
         }
     }

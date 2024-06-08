@@ -8,6 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var tableViewData: [ReusableViewPresenterType] = []
     private var presenter: HomePresenterType!
     
     convenience init(presenter: HomePresenterType) {
@@ -26,9 +29,36 @@ class HomeViewController: UIViewController {
 }
 
 private extension HomeViewController {
-    func setupViews() { }
+    func setupViews() { 
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: "TaskTableCell", bundle: .main), forCellReuseIdentifier: "TaskTableCell")
+        tableView.register(UINib(nibName: "SpaceCell", bundle: .main), forCellReuseIdentifier: "SpaceCell")
+    }
     
     func bindPresenterClosures() {
         title = presenter.outputs?.title
+        
+        presenter.outputs?.tasksCellPresenters = { [weak self] presenters in
+            self?.tableViewData = presenters
+            self?.tableView.reloadData()
+        }
+    }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableViewData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableViewData[indexPath.row] is TaskTableCellPresenter {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableCell", for: indexPath) as! TaskTableCell
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SpaceCell", for: indexPath) as! SpaceCell
+        return cell
     }
 }
