@@ -22,8 +22,8 @@ class AppCoordinator: Coordinator<ResultType<Void>> {
         presenter.outputs?.result = { [weak self] _ in
             guard let self = self else { return }
             
-            // Splash controller finish their work, starting home coordinator for home flow
-            self.startHome(completion: completion)
+            // Splash controller finish their work, starting home flow
+            self.startHome(completion)
         }
         
         window.rootViewController = vc
@@ -32,7 +32,7 @@ class AppCoordinator: Coordinator<ResultType<Void>> {
 }
 
 private extension AppCoordinator {
-    func startHome(completion: @escaping (ResultType<Void>) -> Void) {
+    func startHome(_ completion: @escaping (ResultType<Void>) -> Void) {
         let coordinator = HomeCoordinator(window: self.window, container: self.container)
         self.coordinate(to: coordinator, completion: completion)
     }
