@@ -102,6 +102,7 @@
 		087FEA582C137A6500812F12 /* smart-tasks */ = {
 			isa = PBXGroup;
 			children = (
+				08D6EDA52C150C4400AF6E31 /* DependencyContainers */,
 				08D6ED782C138C8000AF6E31 /* UIKit */,
 				08D6ED632C13832800AF6E31 /* App */,
 				08D6ED622C13819100AF6E31 /* Data */,
@@ -145,7 +146,6 @@
 		08D6ED632C13832800AF6E31 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				08D6ED7C2C13A2A300AF6E31 /* Containers */,
 				08D6ED642C13839600AF6E31 /* Coordinator */,
 				08D6ED742C138AFC00AF6E31 /* AppCoordinator.swift */,
 			);
@@ -190,15 +190,6 @@
 				08D6ED792C138CA000AF6E31 /* NavigationController.swift */,
 			);
 			path = BaseClases;
-			sourceTree = "<group>";
-		};
-		08D6ED7C2C13A2A300AF6E31 /* Containers */ = {
-			isa = PBXGroup;
-			children = (
-				08D6ED7D2C13A2BB00AF6E31 /* AppMainContainer.swift */,
-				08D6ED7F2C13A2DC00AF6E31 /* UserContainer.swift */,
-			);
-			path = Containers;
 			sourceTree = "<group>";
 		};
 		08D6ED812C13A40B00AF6E31 /* Splash */ = {
@@ -254,6 +245,15 @@
 				08D6EDA32C15053800AF6E31 /* SpaceCellPresenter.swift */,
 			);
 			path = SpaceTableView;
+			sourceTree = "<group>";
+		};
+		08D6EDA52C150C4400AF6E31 /* DependencyContainers */ = {
+			isa = PBXGroup;
+			children = (
+				08D6ED7F2C13A2DC00AF6E31 /* UserContainer.swift */,
+				08D6ED7D2C13A2BB00AF6E31 /* AppMainContainer.swift */,
+			);
+			path = DependencyContainers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
