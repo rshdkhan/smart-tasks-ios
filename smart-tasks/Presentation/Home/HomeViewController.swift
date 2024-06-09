@@ -53,12 +53,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableViewData[indexPath.row] is TaskTableCellPresenter {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableCell", for: indexPath) as! TaskTableCell
-            return cell
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SpaceCell", for: indexPath) as! SpaceCell
+        let cellPresenter = tableViewData[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellPresenter.reusableIdentifier, for: indexPath) as! TableViewCell
+        cell.configure(presenter: cellPresenter)
         return cell
     }
 }

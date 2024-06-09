@@ -23,5 +23,3 @@ protocol HomePresenterType {
     var inputs: HomePresenterInput? { get }
     var outputs: HomePresenterOutput? { get }
 }
-
-protocol ReusableViewPresenterType { }

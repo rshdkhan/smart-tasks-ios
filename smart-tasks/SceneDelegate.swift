@@ -14,8 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func appCoordinator() {
         let container = AppMainContainer()
-        let sessionContainer = UserContainer(parent: container)
-        coordinator = AppCoordinator(window: window!, container: sessionContainer)
+        let userContainer = UserContainer(parent: container)
+        coordinator = AppCoordinator(window: window!, container: userContainer)
         coordinator.start { [weak self] _ in
             self?.appCoordinator()
         }

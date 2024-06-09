@@ -1,11 +1,12 @@
 //
-//  TaskRepositoryType.swift
+//  TaskModel.swift
 //  smart-tasks
 //
-//  Created by Rashid Khan on 08/06/2024.
+//  Created by Rashid Khan on 09/06/2024.
 //
 
 import Foundation
+
 struct TaskModel: Decodable {
     let id: String
     let targetDate: Date
@@ -35,25 +36,11 @@ struct TaskModel: Decodable {
     }
     
     func convertToTaskEntity() -> TaskEntity {
-        return TaskEntity(id: self.id, 
+        return TaskEntity(id: self.id,
                           targetDate: self.targetDate,
                           dueDate: self.dueDate,
                           title: self.title,
                           description: self.description,
                           priority: self.priority)
-    }
-}
-
-protocol TaskRepositoryType {
-    func getAllTasks(completion: @escaping (Result<[TaskEntity], Error>)->Void)
-}
-
-class TaskRepositoryMock: TaskRepositoryType {
-    func getAllTasks(completion: @escaping (Result<[TaskEntity], Error>) -> Void) {
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let models = [TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity(), TaskEntity()]
-            completion(.success(models))
-        }
     }
 }

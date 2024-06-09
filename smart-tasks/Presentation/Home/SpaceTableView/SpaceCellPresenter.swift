@@ -18,7 +18,7 @@ protocol SpaceCellPresenterType {
     var outputs: SpaceCellPresenterOutput? { get }
 }
 
-class SpaceCellPresenter: SpaceCellPresenterType, SpaceCellPresenterInput, SpaceCellPresenterOutput, ReusableViewPresenterType {
+class SpaceCellPresenter: SpaceCellPresenterType, SpaceCellPresenterInput, SpaceCellPresenterOutput {
     weak var inputs: SpaceCellPresenterInput? { self }
     weak var outputs: SpaceCellPresenterOutput? { self }
     
@@ -32,4 +32,8 @@ class SpaceCellPresenter: SpaceCellPresenterType, SpaceCellPresenterInput, Space
     func viewLoaded() {
         height?(heightValue)
     }
+}
+
+extension SpaceCellPresenter: ReusableViewPresenterType {
+    var reusableIdentifier: String { "SpaceCell" }
 }

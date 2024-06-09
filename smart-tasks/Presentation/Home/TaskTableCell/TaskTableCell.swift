@@ -7,17 +7,19 @@
 
 import UIKit
 
-class TaskTableCell: UITableViewCell {
+class TaskTableCell: TableViewCell {
     @IBOutlet weak var containerView: UIView!
+    
+    private var presenter: TaskTableCellPresenterType!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         containerView.layer.cornerRadius = 5
+        selectionStyle = .none
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func configure(presenter: ReusableViewPresenterType) {
+        self.presenter = presenter as? TaskTableCellPresenterType
+        
     }
-    
 }
