@@ -35,12 +35,21 @@ struct TaskModel: Decodable {
         self.priority = try container.decode(Int.self, forKey: .priority)
     }
     
-    func convertToTaskEntity() -> TaskEntity {
+    func toEntity() -> TaskEntity {
         return TaskEntity(id: self.id,
                           targetDate: self.targetDate,
                           dueDate: self.dueDate,
                           title: self.title,
                           description: self.description,
                           priority: self.priority)
+    }
+    
+    init() {
+        self.id = "11011"
+        self.targetDate = Date()
+        self.dueDate = Date()
+        self.title = "Test title"
+        self.description = "Testing with mock implementations is good but it only help if your code is compatible of it"
+        self.priority = 1
     }
 }

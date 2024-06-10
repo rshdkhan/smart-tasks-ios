@@ -28,6 +28,15 @@ struct UserContainer {
     
     /// Repository
     func makeTaskMockRepository() -> TaskRepositoryMock {
-        return TaskRepositoryMock()
+        return TaskRepositoryMock(remoteDataSource: makeTaskRemoteDataSource())
+    }
+    
+    /// Service
+    func makeTaskRemoteDataSource() -> RemoteTaskDataSource {
+        return RemoteTaskDataSource(apiClient: makeAPIClient())
+    }
+    
+    func makeAPIClient() -> APIClient {
+        return APIClient(session: .default)
     }
 }
