@@ -9,11 +9,11 @@ import Foundation
 
 struct TaskModel: Decodable {
     let id: String
-    let targetDate: Date
-    let dueDate: Date
-    let title: String
-    let description: String
-    let priority: Int
+    let title: String?
+    let description: String?
+    let priority: Int?
+    let targetDate: Date?
+    let dueDate: Date?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -24,24 +24,13 @@ struct TaskModel: Decodable {
         case priority = "Priority"
     }
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        self.id = try container.decode(String.self, forKey: .id)
-        self.targetDate = try container.decode(Date.self, forKey: .targetDate)
-        self.dueDate = try container.decode(Date.self, forKey: .dueDate)
-        self.title = try container.decode(String.self, forKey: .title)
-        self.description = try container.decode(String.self, forKey: .description)
-        self.priority = try container.decode(Int.self, forKey: .priority)
-    }
-    
     func toEntity() -> TaskEntity {
         return TaskEntity(id: self.id,
-                          targetDate: self.targetDate,
-                          dueDate: self.dueDate,
-                          title: self.title,
-                          description: self.description,
-                          priority: self.priority)
+                          targetDate: self.targetDate ?? Date(),
+                          dueDate: self.dueDate ?? Date(),
+                          title: self.title ?? "",
+                          description: self.description ?? "",
+                          priority: self.priority ?? 0)
     }
     
     init() {
@@ -49,7 +38,7 @@ struct TaskModel: Decodable {
         self.targetDate = Date()
         self.dueDate = Date()
         self.title = "Test title"
-        self.description = "Testing with mock implementations is good but it only help if your code is compatible of it"
+        self.description = "Testing with mock implementations is good, this become more useful when you are writing test cases"
         self.priority = 1
     }
 }

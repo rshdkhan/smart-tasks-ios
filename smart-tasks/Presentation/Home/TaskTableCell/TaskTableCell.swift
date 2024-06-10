@@ -9,6 +9,9 @@ import UIKit
 
 class TaskTableCell: TableViewCell {
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDueDate: UILabel!
+    @IBOutlet weak var lblDaysLeft: UILabel!
     
     private var presenter: TaskTableCellPresenterType!
     
@@ -21,5 +24,13 @@ class TaskTableCell: TableViewCell {
     override func configure(presenter: ReusableViewPresenterType) {
         self.presenter = presenter as? TaskTableCellPresenterType
         
+        setupBindings()
+        self.presenter.inputs?.viewLoaded()
+    }
+    
+    private func setupBindings() {
+        presenter.outputs?.title = { [weak self] title in self?.lblTitle.text = title }
+        presenter.outputs?.dueDate = { [weak self] title in self?.lblDueDate.text = title }
+        presenter.outputs?.daysLeft = { [weak self] title in self?.lblDaysLeft.text = title }
     }
 }

@@ -10,7 +10,9 @@ import Foundation
 protocol TaskTableCellPresenterInput: PresenterInputType { }
 
 protocol TaskTableCellPresenterOutput: AnyObject {
-    var height: ((CGFloat)->Void)? { get set }
+    var title: ((String)->Void)? { get set }
+    var dueDate: ((String)->Void)? { get set }
+    var daysLeft: ((String)->Void)? { get set }
 }
 
 protocol TaskTableCellPresenterType {
@@ -22,12 +24,20 @@ class TaskTableCellPresenter: TaskTableCellPresenterType, TaskTableCellPresenter
     weak var inputs: TaskTableCellPresenterInput? { self }
     weak var outputs: TaskTableCellPresenterOutput? { self }
     
-    var height: ((CGFloat) -> Void)?
+    var title: ((String) -> Void)?
+    var dueDate: ((String) -> Void)?
+    var daysLeft: ((String) -> Void)?
     
-    init(task: TaskEntity) { }
+    private var task: TaskEntity
+    
+    init(task: TaskEntity) {
+        self.task = task
+    }
     
     func viewLoaded() {
-        
+        self.title?(task.title)
+        self.dueDate?("Parsed Due Date")
+        self.dueDate?("Calaculated Days")
     }
     
 }

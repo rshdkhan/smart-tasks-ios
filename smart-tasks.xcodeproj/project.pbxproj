@@ -40,7 +40,12 @@
 		08D6EDAD2C1510B000AF6E31 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDAC2C1510B000AF6E31 /* TaskRepository.swift */; };
 		08D6EDB32C15C76C00AF6E31 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDB22C15C76C00AF6E31 /* TableViewCell.swift */; };
 		08D6EDB62C16169000AF6E31 /* NetworkClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDB52C16169000AF6E31 /* NetworkClientType.swift */; };
-		08D6EDB82C1705F500AF6E31 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDB72C1705F500AF6E31 /* TaskService.swift */; };
+		08D6EDB82C1705F500AF6E31 /* TaskRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDB72C1705F500AF6E31 /* TaskRemoteDataSource.swift */; };
+		08D6EDBB2C170D6900AF6E31 /* NetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDBA2C170D6900AF6E31 /* NetworkErrorHandler.swift */; };
+		08D6EDBE2C174BA800AF6E31 /* APIRouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDBD2C174BA800AF6E31 /* APIRouteType.swift */; };
+		08D6EDC02C174BF800AF6E31 /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDBF2C174BF800AF6E31 /* APIRoute.swift */; };
+		08D6EDC32C175F9100AF6E31 /* TaskLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDC22C175F9100AF6E31 /* TaskLocalDataSource.swift */; };
+		08D6EDC52C175FA400AF6E31 /* TaskDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EDC42C175FA400AF6E31 /* TaskDataSource.swift */; };
 		DA2AEEF253EC1B9C80F8A1A8 /* Pods_smart_tasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF6C8EDA29400ADC5BFBF7D /* Pods_smart_tasks.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +85,12 @@
 		08D6EDAC2C1510B000AF6E31 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		08D6EDB22C15C76C00AF6E31 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		08D6EDB52C16169000AF6E31 /* NetworkClientType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientType.swift; sourceTree = "<group>"; };
-		08D6EDB72C1705F500AF6E31 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		08D6EDB72C1705F500AF6E31 /* TaskRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRemoteDataSource.swift; sourceTree = "<group>"; };
+		08D6EDBA2C170D6900AF6E31 /* NetworkErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorHandler.swift; sourceTree = "<group>"; };
+		08D6EDBD2C174BA800AF6E31 /* APIRouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouteType.swift; sourceTree = "<group>"; };
+		08D6EDBF2C174BF800AF6E31 /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
+		08D6EDC22C175F9100AF6E31 /* TaskLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalDataSource.swift; sourceTree = "<group>"; };
+		08D6EDC42C175FA400AF6E31 /* TaskDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataSource.swift; sourceTree = "<group>"; };
 		6BF6C8EDA29400ADC5BFBF7D /* Pods_smart_tasks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smart_tasks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		985D488A2EEAFF5F0402EA73 /* Pods-smart-tasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart-tasks.debug.xcconfig"; path = "Target Support Files/Pods-smart-tasks/Pods-smart-tasks.debug.xcconfig"; sourceTree = "<group>"; };
 		CF8827540783F2504A6754F5 /* Pods-smart-tasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart-tasks.release.xcconfig"; path = "Target Support Files/Pods-smart-tasks/Pods-smart-tasks.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,7 +282,9 @@
 		08D6EDA62C150F8700AF6E31 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				08D6EDB42C16165700AF6E31 /* NetworkClient */,
+				08D6EDBC2C174B9200AF6E31 /* APIRoute */,
+				08D6EDB52C16169000AF6E31 /* NetworkClientType.swift */,
+				08D6EDBA2C170D6900AF6E31 /* NetworkErrorHandler.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -304,26 +316,10 @@
 		08D6EDAE2C1511F000AF6E31 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				08D6EDC12C175F6200AF6E31 /* Task */,
 				08D6EDA82C15106100AF6E31 /* Models */,
-				08D6EDB02C15120300AF6E31 /* Local */,
-				08D6EDAF2C1511FC00AF6E31 /* Remote */,
 			);
 			path = DataSources;
-			sourceTree = "<group>";
-		};
-		08D6EDAF2C1511FC00AF6E31 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				08D6EDB72C1705F500AF6E31 /* TaskService.swift */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		08D6EDB02C15120300AF6E31 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		08D6EDB12C15126800AF6E31 /* Coordinators */ = {
@@ -335,19 +331,30 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
-		08D6EDB42C16165700AF6E31 /* NetworkClient */ = {
-			isa = PBXGroup;
-			children = (
-				08D6EDB52C16169000AF6E31 /* NetworkClientType.swift */,
-			);
-			path = NetworkClient;
-			sourceTree = "<group>";
-		};
 		08D6EDB92C17068500AF6E31 /* PersistanceStore */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = PersistanceStore;
+			sourceTree = "<group>";
+		};
+		08D6EDBC2C174B9200AF6E31 /* APIRoute */ = {
+			isa = PBXGroup;
+			children = (
+				08D6EDBD2C174BA800AF6E31 /* APIRouteType.swift */,
+				08D6EDBF2C174BF800AF6E31 /* APIRoute.swift */,
+			);
+			path = APIRoute;
+			sourceTree = "<group>";
+		};
+		08D6EDC12C175F6200AF6E31 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				08D6EDC42C175FA400AF6E31 /* TaskDataSource.swift */,
+				08D6EDB72C1705F500AF6E31 /* TaskRemoteDataSource.swift */,
+				08D6EDC22C175F9100AF6E31 /* TaskLocalDataSource.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		9761A25363268EA9BA2C5516 /* Frameworks */ = {
@@ -488,8 +495,10 @@
 				08D6EDA12C15050F00AF6E31 /* SpaceCell.swift in Sources */,
 				08D6ED732C13897F00AF6E31 /* CoordinatorType.swift in Sources */,
 				08D6ED6D2C1385A000AF6E31 /* HomePresenter.swift in Sources */,
+				08D6EDBB2C170D6900AF6E31 /* NetworkErrorHandler.swift in Sources */,
 				08D6EDA42C15053800AF6E31 /* SpaceCellPresenter.swift in Sources */,
 				087FEA5A2C137A6500812F12 /* AppDelegate.swift in Sources */,
+				08D6EDC02C174BF800AF6E31 /* APIRoute.swift in Sources */,
 				08D6ED7E2C13A2BB00AF6E31 /* AppMainContainer.swift in Sources */,
 				08D6EDAA2C15106D00AF6E31 /* TaskModel.swift in Sources */,
 				08D6ED802C13A2DC00AF6E31 /* UserContainer.swift in Sources */,
@@ -497,9 +506,11 @@
 				08D6ED872C13A45200AF6E31 /* SplashViewController.swift in Sources */,
 				08D6ED712C13892700AF6E31 /* Coordinator.swift in Sources */,
 				08D6ED942C14A2FE00AF6E31 /* TaskRepositoryType.swift in Sources */,
+				08D6EDC52C175FA400AF6E31 /* TaskDataSource.swift in Sources */,
 				08D6ED9B2C14B61100AF6E31 /* TaskTableCellPresenter.swift in Sources */,
 				08D6ED772C138B4000AF6E31 /* ResultType.swift in Sources */,
 				08D6ED982C14ACC300AF6E31 /* TaskTableCell.swift in Sources */,
+				08D6EDBE2C174BA800AF6E31 /* APIRouteType.swift in Sources */,
 				08D6ED752C138AFC00AF6E31 /* AppCoordinator.swift in Sources */,
 				087FEA5C2C137A6500812F12 /* SceneDelegate.swift in Sources */,
 				08D6ED892C13A4D000AF6E31 /* SplashPresenterType.swift in Sources */,
@@ -509,8 +520,9 @@
 				08D6ED8B2C13B03800AF6E31 /* HomeCoordinator.swift in Sources */,
 				08D6EDB32C15C76C00AF6E31 /* TableViewCell.swift in Sources */,
 				08D6ED912C149F9900AF6E31 /* TaskEntity.swift in Sources */,
-				08D6EDB82C1705F500AF6E31 /* TaskService.swift in Sources */,
+				08D6EDB82C1705F500AF6E31 /* TaskRemoteDataSource.swift in Sources */,
 				08D6ED8E2C149F1900AF6E31 /* FetchAllTasksUseCase.swift in Sources */,
+				08D6EDC32C175F9100AF6E31 /* TaskLocalDataSource.swift in Sources */,
 				08D6ED6A2C13855D00AF6E31 /* HomeViewController.swift in Sources */,
 				08D6ED862C13A45200AF6E31 /* SplashPresenter.swift in Sources */,
 			);

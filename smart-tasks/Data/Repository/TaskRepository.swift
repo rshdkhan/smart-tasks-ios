@@ -8,9 +8,9 @@
 import Foundation
 
 class TaskRepositoryMock: TaskRepositoryType {
-    private var remoteDataSource: TaskDataSourceType
+    private var remoteDataSource: TaskDataSource
     
-    init(remoteDataSource: TaskDataSourceType) {
+    init(remoteDataSource: TaskDataSource) {
         self.remoteDataSource = remoteDataSource
     }
     

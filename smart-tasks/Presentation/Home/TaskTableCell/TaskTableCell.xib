@@ -98,6 +98,9 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="containerView" destination="4ac-pb-OJu" id="szt-Ge-QPw"/>
+                <outlet property="lblDaysLeft" destination="bM7-W6-IPz" id="5F9-Kc-6sw"/>
+                <outlet property="lblDueDate" destination="LhX-Kc-bjf" id="rXg-Yx-2TE"/>
+                <outlet property="lblTitle" destination="pVI-nL-ntl" id="LCu-aU-fd4"/>
             </connections>
             <point key="canvasLocation" x="106.87022900763358" y="116.19718309859155"/>
         </tableViewCell>
