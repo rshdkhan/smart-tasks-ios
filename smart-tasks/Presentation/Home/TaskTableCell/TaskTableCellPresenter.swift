@@ -36,12 +36,29 @@ class TaskTableCellPresenter: TaskTableCellPresenterType, TaskTableCellPresenter
     
     func viewLoaded() {
         self.title?(task.title)
-        self.dueDate?("Parsed Due Date")
-        self.dueDate?("Calaculated Days")
+        self.dueDate?(task.dueDate.formate())
+        
+        let daysLeft = task.dueDate.daysBetween(to: task.targetDate)
+        self.daysLeft?("\(daysLeft ?? 0)")
     }
-    
 }
 
 extension TaskTableCellPresenter: ReusableViewPresenterType {
     var reusableIdentifier: String { "TaskTableCell" }
+}
+
+extension Date {
+    func formate(_ format: String = "MMM dd yyyy") -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+    
+    func daysBetween(to date: Date) -> Int? {
+        let calendar = Calendar.current
+        let startOfDaySelf = calendar.startOfDay(for: self)
+        let startOfDayDate = calendar.startOfDay(for: date)
+        let components = calendar.dateComponents([.day], from: startOfDaySelf, to: startOfDayDate)
+        return components.day
+    }
 }

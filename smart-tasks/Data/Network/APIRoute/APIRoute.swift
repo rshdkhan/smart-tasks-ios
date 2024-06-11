@@ -40,7 +40,7 @@ struct SmartTasksAPIRoute: APIRouteType {
 }
 
 extension SmartTasksAPIRoute {
-    public func asURLRequest() throws -> URLRequest {
+    func asURLRequest() throws -> URLRequest {
 
         let url = try constructAPIUrl()
         

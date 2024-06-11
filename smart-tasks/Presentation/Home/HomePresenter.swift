@@ -12,7 +12,7 @@ class HomePresenter: HomePresenterType, HomePresenterInput, HomePresenterOutput 
     weak var outputs: HomePresenterOutput? { self }
     
     // MARK: Outputs
-    var title: String? = "Home"
+    var title: String? = "Today"
     var tasksCellPresenters: (([ReusableViewPresenterType]) -> Void)?
     var error: ((String) -> Void)?
     
@@ -24,14 +24,14 @@ class HomePresenter: HomePresenterType, HomePresenterInput, HomePresenterOutput 
     
     // MARK: Inputs
     func viewLoaded() {
-        fetchAllTaskUseCase.execute { [weak self] result in
+        fetchAllTaskUseCase.execute(filterBy: nil) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let tasks):
                 var presenters: [ReusableViewPresenterType] = []
                 
-                tasks.forEach { task in
+                for task in tasks {
                     presenters.append(TaskTableCellPresenter(task: task))
                     presenters.append(SpaceCellPresenter(height: 10))
                 }
